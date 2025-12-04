@@ -116,7 +116,7 @@ jobs:
           cd build
           set -e
           echo "== Test car 10 0 ==" > report.txt
-          ./src/calculator add 10 0 | tee -a report.txt
+          ./src/calculator car 10 0 | tee -a report.txt
           echo "Exit code: $?" >> report.txt
 
       - name: Upload report as artifact
@@ -128,7 +128,7 @@ jobs:
 
       - name: Job summary
         run: |
-          echo "### Résultat du test *add*" >> $GITHUB_STEP_SUMMARY
+          echo "### Résultat du test *car*" >> $GITHUB_STEP_SUMMARY
           echo '' >> $GITHUB_STEP_SUMMARY
           echo '' >> $GITHUB_STEP_SUMMARY
           cat build/report.txt >> $GITHUB_STEP_SUMMARY
